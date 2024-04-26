@@ -1,9 +1,5 @@
 #include "bits/stdc++.h"
-
 using namespace std;
-
-#define ll long long
-#define DEBUG
 
 #ifdef DEBUG
 #define debug(...) (std::cout << "DBG : ", show(std::cout, #__VA_ARGS__, __VA_ARGS__))
@@ -32,86 +28,65 @@ template <class T> void show(const T& v) { for (auto& item : v) { cout << item <
 
 
 
+
+
+
+
+
+
+#include "myLibraries/modint.cpp"
+
+
+const int mod = 1e9 + 7;
+const int MAX = 3e5 + 5;
+
+
+#define ll long long
+using mint = lynx::modint<mod>;
+
+
+mint v[MAX];
+
+void init_v(int n){
+
+	v[0] = 1;
+	for(mint i = 2; (ll)(i) <= n;i += 2){
+			
+	}
+
+}
+
 void solve(){
 
-    ll n,m,k; cin >> n >> m >> k;
-    vector<array<ll,2>> a(n);
-    for(int i = 0; i < n;++i){
-        int x; cin >> x;
-        a[i] = {x,i};
-    }
+	int n, k; cin >> n >> k;
 
-    sort(a.begin(),a.end(), [](array<ll,2> q,array<ll,2> w){
+	int m = n;
+	for(int i = 0; i < k;++i){
+		int y,x; cin >> y >> x;
+		m -= 1 + (y != x);
+	}
 
-        if(q[0] != q[1]) return q[0] < w[0];
-        return q[1] > w[1];
-
-    });
-
-    
-    if(debug("sort1")){
-
-        for(auto [v,j] : a){
-            debug(v,j);
-        }
-
-    }
-
-
-    ll d = ceil(1.0*k / m);
-    debug(d);
-
-
-    sort(a.begin(),a.begin() + d,[](array<ll,2> q,array<ll,2> w){
-
-        if(q[1] != w[1]) return q[1] > w[1];
-        return q[0] < w[0];
-
-    });
-
-    if(debug("sort2")){
-
-        for(int i = 0; i < d;++i){
-            int v = a[i][0], j = a[i][1];
-            debug(v,i);
-        }
-
-    }
-
-    vector<ll> c2(d);
-    for(ll i = 0; i < d;++i){
-        c2[i] = a[i][0] + i*m;
-        debug(a[i][0],i*m,c2[i]);
-    }
-
-    sort(c2.begin(),c2.end());
-
-    ll y = (k % m ? k % m : m);
-    debug(y);
-    ll ans = c2.back()*y;
-    debug(c2.back(),ans);
-
-
-    for(int i = 0; i < c2.size() - 1;++i){
-        ans += c2[i]*m;
-        debug(i,c2[i]*m,ans);    
-    }
-
-    cout << ans << '\n';
-
-
+	
 
 }
 
 
 int main(){
-    ios_base::sync_with_stdio(0);cin.tie(0);
+	ios_base::sync_with_stdio(0);cin.tie(0);
 
-    int T; cin >> T;
-    while(T--){
-        solve();
+	mint q = 1e9 + 6;
+	cout << (ll)(q) << ' ' << (ll)(q + mod) << ' ' << (ll)(q + 1) << '\n';
 
-    }
+	q + 1;
+	q + 2;
 
-    return 0;
+
+	return 0;
+
+
+	int T; cin >> T;
+	while(T--)
+			solve();
+
+	return 0;
 }
