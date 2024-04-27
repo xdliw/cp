@@ -34,26 +34,58 @@ template <class T> void show(const T& v) { for (auto& item : v) { cout << item <
 
 
 
-#include "myLibraries/modint.cpp"
+#include "myLibraries/modint.h"
 
 
 const int mod = 1e9 + 7;
-const int MAX = 3e5 + 5;
+const int MAX = 3e5;
 
 
 #define ll long long
 using mint = lynx::modint<mod>;
 
 
-mint v[MAX];
+mint v[MAX + 1];
+mint fact[MAX + 1];
+// mint inv[MAX + 1];
+// mint invfact[MAX + 1];
 
-void init_v(int n){
+void init_v(){
 
 	v[0] = 1;
-	for(mint i = 2; (ll)(i) <= n;i += 2){
-			
+	for(int i = 2; i <= MAX;i += 2){
+			v[i] = v[i - 2]*2*(i - 1);
 	}
 
+}
+
+void init_fact(){
+
+	fact[0] = 1;
+	for(int i = 1; i <= MAX;++i)
+		fact[i] = fact[i - 1]*i;
+}
+
+// void init_inv(){
+
+// 	inv[1] = 1;
+//  	for(int i = 2; i <= MAX; ++i){
+// 		inv[i] = -(mod/i)*inv[mod % i];
+// 	}
+
+// }
+// void init_invfact(){
+
+// 	invfact[0] = 1;
+
+// 	for(int i = 1; i <= MAX;++i){
+// 		invfact[i] = invfact[i - 1]*inv[i];
+// 	}
+
+// }
+
+mint inline C(int n, int k){
+	return fact[n]*((fact[n - k]*fact[k]).inv_for_prime_mod());
 }
 
 void solve(){
@@ -66,23 +98,21 @@ void solve(){
 		m -= 1 + (y != x);
 	}
 
-	
+	mint ans = 0;
+
+	for(int i = m; i >= 0; i-= 2){
+		ans += C(m,i)*v[m - i];
+	}
+
+	cout << ans << '\n';
 
 }
-
 
 int main(){
 	ios_base::sync_with_stdio(0);cin.tie(0);
 
-	mint q = 1e9 + 6;
-	cout << (ll)(q) << ' ' << (ll)(q + mod) << ' ' << (ll)(q + 1) << '\n';
-
-	q + 1;
-	q + 2;
-
-
-	return 0;
-
+	init_v();
+	init_fact();
 
 	int T; cin >> T;
 	while(T--)
