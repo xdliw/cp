@@ -26,97 +26,67 @@ template <class T> void show(const T& v) { for (auto& item : v) { cout << item <
 
 
 
-
-
-
-
-
-
-
-
 #include "myLibraries/modint.h"
 
-
-const int mod = 1e9 + 7;
-const int MAX = 3e5;
-
-
 #define ll long long
-using mint = lynx::modint<mod>;
 
 
-mint v[MAX + 1];
-mint fact[MAX + 1];
-// mint inv[MAX + 1];
-// mint invfact[MAX + 1];
+void parse_str(const string& s, vector<int>& v){
+	int cur = 0;
 
-void init_v(){
+	for(int i = 0; i < s.size();++i){
+		if(s[i] >= '0' && s[i] <= '9'){
+			cur *= 10;
+			cur += s[i] - '0';
+		}
+		else{
+			v.push_back(cur);
+			cur = 0;
+		}
 
-	v[0] = 1;
-	for(int i = 2; i <= MAX;i += 2){
-			v[i] = v[i - 2]*2*(i - 1);
 	}
 
 }
 
-void init_fact(){
-
-	fact[0] = 1;
-	for(int i = 1; i <= MAX;++i)
-		fact[i] = fact[i - 1]*i;
-}
-
-// void init_inv(){
-
-// 	inv[1] = 1;
-//  	for(int i = 2; i <= MAX; ++i){
-// 		inv[i] = -(mod/i)*inv[mod % i];
-// 	}
-
-// }
-// void init_invfact(){
-
-// 	invfact[0] = 1;
-
-// 	for(int i = 1; i <= MAX;++i){
-// 		invfact[i] = invfact[i - 1]*inv[i];
-// 	}
-
-// }
-
-mint inline C(int n, int k){
-	return fact[n]*((fact[n - k]*fact[k]).inv_for_prime_mod());
-}
-
-void solve(){
-
-	int n, k; cin >> n >> k;
-
-	int m = n;
-	for(int i = 0; i < k;++i){
-		int y,x; cin >> y >> x;
-		m -= 1 + (y != x);
-	}
-
-	mint ans = 0;
-
-	for(int i = m; i >= 0; i-= 2){
-		ans += C(m,i)*v[m - i];
-	}
-
-	cout << ans << '\n';
-
-}
 
 int main(){
-	ios_base::sync_with_stdio(0);cin.tie(0);
+	// ios_base::sync_with_stdio(0);cin.tie(0);
 
-	init_v();
-	init_fact();
 
-	int T; cin >> T;
-	while(T--)
-			solve();
+	const int m = 41;
+
+	using mint = lynx::modint<m>;
+
+
+	string s;
+	getline(cin, s);
+
+	vector<int> v;
+	parse_str(s,v);
+
+
+	s = "";
+	for(auto& i : v){
+		i %= m;
+
+		mint q = i;
+		i = q.inv_for_prime_mod().val();
+
+		if(i <= 26){
+			s += 'A' + i - 1;
+		}
+		else if(i <= 36){
+			s += '0' + i - 27;
+		}
+		else
+			s += '_';
+	}
+
+	string ss = "1NV3R53LY_H4RD_8A05D939";
+
+	cout << (s == ss) << '\n';
+
+
 
 	return 0;
 }

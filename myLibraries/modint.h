@@ -10,8 +10,6 @@ namespace lynx{
 
 template<unsigned int m>
 class modint{
-	//m < MAXINT/2
-	//+ * - are implemented
 
 public:
 
@@ -64,11 +62,12 @@ public:
 	}
 
 
-	friend std::ostream& operator<<(std::ostream& out, const modint& x){
-		return out << x._v;
-	}
+	// friend std::ostream& operator<<(std::ostream& out, const modint& x){
+	// 	return out << x._v;
+	// }
 
-	explicit operator unsigned int () const {
+
+	unsigned int val () const {
 		return _v;
 	}
 
