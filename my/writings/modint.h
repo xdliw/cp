@@ -4,8 +4,7 @@ namespace lynx{
 //1) why put m into _umod() ? ?incapsulation
 //2) why friend operators ?
 //3) why cant i add () const {} to a friend function? ?cuz its like static and theres no current object
-//4) what is assert() why it is used
-//5) why in inv_for_prime i can return just pow() and dont have to do this->pow() ?
+//4) why in inv_for_prime i can return just pow() and dont have to do this->pow() ?
 
 
 template<unsigned int m>
