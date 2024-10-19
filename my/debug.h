@@ -56,7 +56,5 @@ void assert_mle(bool q){
 //for testing by the testing system, cause that's what it's for!
 
 
-
 //todo:
-//how to measure memory consumed by a program (actually maybe compiling with limited amount. I saw it with -stacksize or sth)
-//configuring a debugger or trying to use gdb it in terminal maybe?
+//(maaybe later) how to measure memory consumed by a program (actually maybe compiling with limited amount. I saw it with -stacksize or sth)
