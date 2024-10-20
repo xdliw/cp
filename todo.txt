@@ -1,0 +1,6 @@
+
+-configuring debugger
+see vscode docs on c++
+
+-finally upsolving
+-Finallyy reading the book and making conspectus and solving problems on cses.fi
