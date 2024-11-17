@@ -11,13 +11,21 @@ using namespace std;
 
 #define ll long long
 
+int r(int n){
+	if (n == 0) return 0;
+
+	return n + r(n - 1);
+}
+
 
 int main(){
-	ios_base::sync_with_stdio(false); cin.tie(nullptr);
+//	ios_base::sync_with_stdio(false); cin.tie(nullptr);
 
-	cout << 1;
+	for(int i = 0; i < 10; ++i){
+		cout << r(i) << '\n';
+	}
 
-	cout << 2;
+
 
 	return 0;
 }

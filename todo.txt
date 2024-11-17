@@ -1,6 +1,4 @@
 
--configuring debugger
-see vscode docs on c++
-
+-colingalen dp and recursion
 -finally upsolving
--Finallyy reading the book and making conspectus and solving problems on cses.fi
+-Finallyy reading the book and making conspectus and solving problems on cses.fi! <3
