@@ -4,8 +4,8 @@ makes directory argv[1] and fills it with template directories [A;argv[2]]
 
 import sys, os, shutil
 
-#argv[1] = foldername
-#argv[2] = letter up to which to create folders like A, B, ..., letter
+#argv[1] = dirname
+#argv[2] = letter up to which to create dirs like A, B, ..., letter
 if len(sys.argv) != 3:
 	print("Please specify folder name and last task letter")
 	exit(0)
