@@ -2,7 +2,7 @@
 using namespace std;
 
 #ifdef LOCAL
-#include "my/debug.h"
+#include "my/writings/debug.h"
 #else
 #define dbg(...) 0
 #define show(x) 0
@@ -25,7 +25,7 @@ int main(){
 		cout << r(i) << '\n';
 	}
 
-
+	
 
 	return 0;
 }

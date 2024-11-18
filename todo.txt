@@ -1,8 +1,8 @@
 
--colingalen dp and recursion
 -finally upsolving
+-colingalen dp and recursion
 -Finallyy reading the book and making conspectus and solving problems on cses.fi! <3
 
--shortcut for makedirs.py
-
 -save vscode configuration on git
+
+-shortcut for makedirs.py
