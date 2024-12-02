@@ -6,3 +6,11 @@
 -save vscode configuration on git
 
 -shortcut for makedirs.py
+
+
+topics or questions:
+prove formula for divisor count
+
+
+smaller things:
+analyze time spent on task L16112024
