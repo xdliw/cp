@@ -17,7 +17,7 @@ int r(int n){
 	return n + r(n - 1);
 }
 
-int main(){
+int32_t main(){
 //	ios_base::sync_with_stdio(false); cin.tie(nullptr);
 
 	map<int,int> m = {{},{1,1}};

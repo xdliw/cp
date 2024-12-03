@@ -29,9 +29,7 @@ int32_t main() {
 	vector<int> ans;
 
 	if(m[2] && m[4] && m[269]){
-		ans.push_back(2);
-		ans.push_back(4);
-		ans.push_back(269);
+		ans = {2,4,269};
 	}
 	else{
 		m[1] = 1;
@@ -43,11 +41,9 @@ int32_t main() {
 				for(int i = 0; i < e;++i){
 					ans.push_back(w);
 				}
-
 				break;
 			}
 		}
-
 	}
 	
 	if(!m[7487]) ans.clear();
@@ -68,5 +64,4 @@ int32_t main() {
 		for(auto i : ans) cout << i << ' ';	
 	}
 	else cout << 0;
-
 }
