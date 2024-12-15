@@ -1,23 +1,23 @@
 
+next:
+-analyze cf993
+-learn more about structural induction
+-what is complexity for recursive NchooseK?
+-Treaps
+
+
 general solving plans:
 -upsolving
--colingalen dp and recursion
+-colingalen dp
 -Finallyy reading the book and making conspectus and solving problems on cses.fi! <3
-
-
-
-smaller things:
-
-
-
-
-maybe:
--prove formula for divisor count
-
-
-
 
 
 technical:
 -save vscode configuration on git
 -shortcut for makedirs.py
+
+
+maybe:
+-prove that on average randomly picked number in an array splits it into parts 1/3 and 2/3
+-prove Pick's theorem
+-prove formula for divisor count
