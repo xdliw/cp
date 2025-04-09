@@ -6,11 +6,7 @@ using namespace std;
 2 how do we transition between states (to the base state)?
 3 what is base state?
 
-remember: greenboxing the subproblem
-*/
 
-
-/*
 Maybe try to prove recursion via mathematical induction.
 In mathematical induction theres like: (examples in brackets)
 (1) base case (1case)
@@ -22,6 +18,8 @@ example:
 generalized:
 	if (1) is correct AND (3) is true for (2) -> (1),next((1)),...,(2),(3),... are correct
 
+
+advice: greenbox the subproblem
 */
 
 /* 

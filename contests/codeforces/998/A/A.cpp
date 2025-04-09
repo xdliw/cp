@@ -13,7 +13,14 @@ using namespace std;
 
 void solve(){
 
+	vector<int> a(4);
+	for(auto& i : a) cin >> i;
+	vector<int> b;
+	b.push_back(a[0] + a[1]);
+	b.push_back(a[2] - a[1]);
+	b.push_back(a[3] - a[2]);
 
+	cout << max({count(b.begin(),b.end(),b[0]),count(b.begin(),b.end(),b[1]),count(b.begin(),b.end(),b[2])}) << '\n';
 
 }
 
