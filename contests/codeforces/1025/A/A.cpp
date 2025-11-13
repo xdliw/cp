@@ -9,9 +9,23 @@ using namespace std;
 #endif
 
 
+#define ll long long
+
 void solve(){
 
+	int n; cin >> n;
+	deque<int> d;
+	for(int i = 0; i < n;++i){
+		int x; cin >> x;
+		d.push_back(x);
+	}
+	d.push_back(d.back());
+	d.push_front(d.front());
 
+	for(int i = 0; i < n;++i){
+		d
+	}
+	
 
 }
 

@@ -9,9 +9,16 @@ using namespace std;
 #endif
 
 
+#define ll long long
+
 void solve(){
+	int n; cin >> n;
+	vector<int> v(n); for(auto& i : v) cin >> i;
+	int x; cin >> x;
+	sort(v.begin(),v.end());
 
-
+	if(v[0] <= x && x <= v[n-1]) cout << "YES\n";
+	else cout << "NO\n";
 
 }
 

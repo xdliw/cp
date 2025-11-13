@@ -9,9 +9,23 @@ using namespace std;
 #endif
 
 
+#define ll long long
+
 void solve(){
 
+	int n; cin >> n;
+	vector<int> a(n); for(auto& i : a) cin >> i;
 
+	for(int i = 0; i < n - 1; ++i){
+		for(int j = i + 1; j < n; ++j){
+			if(a[j] % a[i] % 2 == 0){
+				cout << a[i] << ' ' << a[j] << '\n';
+				return;
+			}
+		}
+	}
+
+	cout << "-1\n";
 
 }
 

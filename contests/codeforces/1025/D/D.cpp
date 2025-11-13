@@ -9,6 +9,8 @@ using namespace std;
 #endif
 
 
+#define ll long long
+
 void solve(){
 
 
