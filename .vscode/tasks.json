@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    {
+      "type": "cppbuild",
+      "label": "g++20 CP LOCAL with -g",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-Wall",
+        "-Wextra",
+        "-Wconversion",
+        "-static",
+        "-O2",
+        "-std=c++20",
+        "-o",
+        "${fileBasenameNoExtension}.out",
+        "-DLOCAL",
+        "-I${workspaceFolder}",
+        "-g",
+        "${file}", //{workspaceFolder}/*.cpp to compile all cpps here
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build",
+      "detail": "Task with defined LOCAL macro. Dependent on the code/cp directory. Also with -g"
+    }
+  ],
+  "version": "2.0.0"
+}
