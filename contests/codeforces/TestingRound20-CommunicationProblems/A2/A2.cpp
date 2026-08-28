@@ -8,7 +8,8 @@ using namespace std;
 #define show(x) 0
 #endif
 
-
+const int base = 26;
+const int digits = 7; //is enough to represent any number up to 1e9. 1e9 / 26^7 < 1
 
 void first(){
 
@@ -19,9 +20,9 @@ void first(){
 
 	//a = 0 b = 1 ...
 	for(auto& x : a){
-		for(int i = 0; i < 10; ++i){
-			s += (x % 10) + 'a';
-			x /= 10;
+		for(int i = 0; i < digits; ++i){
+			s += (x % base) + 'a';
+			x /= base;
 		}
 	}
 
@@ -33,15 +34,15 @@ void second(){
 
 	string s; cin >> s;
 
-	cout << s.size() / 10 << '\n';
+	cout << s.size() / digits << '\n';
 	int x = 0;
 	
 	for(int i = 0; i < s.size(); ++i){
-		int j = i % 10;
+		int j = i % digits;
 
-		x += (s[i] - 'a') * pow(10,j);
+		x += (s[i] - 'a') * pow(base,j);
 		
-		if(j == 9){
+		if(j == digits - 1){
 			cout << x << ' ';
 			x = 0;
 		}

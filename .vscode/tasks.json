@@ -16,7 +16,7 @@
         "-DLOCAL",
         "-I${workspaceFolder}",
         "-g",
-        "${file}", //{workspaceFolder}/*.cpp to compile all cpps here
+        "${file}"
       ],
       "options": {
         "cwd": "${fileDirname}"
@@ -26,6 +26,27 @@
       ],
       "group": "build",
       "detail": "Task with defined LOCAL macro. Dependent on the code/cp directory. Also with -g"
+    },
+    {
+      "type": "cppbuild",
+      "label": "C/C++20: g++ build active file",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-std=c++20",
+        "-fdiagnostics-color=always",
+        "-g",
+        "${file}",
+        "-o",
+        "${fileDirname}/${fileBasenameNoExtension}"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": "build",
+      "detail": "compiler: /usr/bin/g++"
     }
   ],
   "version": "2.0.0"
