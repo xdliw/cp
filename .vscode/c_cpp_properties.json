@@ -5,7 +5,6 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/my/",
-                "${workspaceFolder}/my/conspectus/",
                 "${workspaceFolder}/my/writings/",
             ],
             "defines": [],
