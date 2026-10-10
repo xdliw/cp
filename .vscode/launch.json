@@ -4,11 +4,13 @@
       "name": "C/C++: g++ build and debug active file",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+      "program": "${fileDirname}/${fileBasenameNoExtension}_debug",
       "args": [],
       "stopAtEntry": false,
       "cwd": "${fileDirname}",
-      "environment": [],
+      "environment": [
+        { "name": "ASAN_OPTIONS", "value": "detect_leaks=0" }
+      ],
       "externalConsole": false,
       "MIMode": "gdb",
       "setupCommands": [
@@ -23,7 +25,7 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "g++20 CP LOCAL with -g",
+      "preLaunchTask": "CF DEBUG",
       "miDebuggerPath": "/usr/bin/gdb"
     }
   ],
